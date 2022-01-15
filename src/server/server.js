@@ -27,7 +27,7 @@ console.log(`Version deployed: ${pkgjson.version}`);
  * Configuration
  */
 let configData;
-const PORTSERVER = 3000;
+const PORTSERVER = 80;
 const ENV = process.env.NODE_ENV || 'development';
 
 if (ENV === 'development') {
