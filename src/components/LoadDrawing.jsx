@@ -132,6 +132,11 @@ export default class LoadDrawing extends React.Component {
     return [];
   }
 
+  giveMeCryptoPunks() {
+    console.log(this);
+    return [];
+  }
+
   giveMeOptions(type) {
     switch (type) {
       case 'import': {
@@ -206,6 +211,23 @@ export default class LoadDrawing extends React.Component {
             actions={actions}
             close={close}
           />
+        );
+      }
+      case 'punks': {
+        const drawings = this.giveMeCryptoPunks();
+        const drawingsStored = drawings.length > 0;
+        return (
+          <div className="load-drawing">
+            <h2>Select one of punks</h2>
+            <div
+              className={`load-drawing__container
+                ${!drawingsStored ? 'empty' : ''}`}
+            >
+              {drawingsStored
+                ? this.giveMeCryptoPunks()
+                : 'Nothing awesome yet...'}
+            </div>
+          </div>
         );
       }
       default: {
