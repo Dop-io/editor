@@ -223,9 +223,7 @@ export default class LoadDrawing extends React.Component {
               className={`load-drawing__container
                 ${!drawingsStored ? 'empty' : ''}`}
             >
-              {drawingsStored
-                ? this.giveMeCryptoPunks()
-                : 'Nothing awesome yet...'}
+              {drawingsStored ? drawings : 'Nothing awesome yet...'}
             </div>
           </div>
         );

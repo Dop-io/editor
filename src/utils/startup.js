@@ -1,5 +1,7 @@
+import { App, Credentials } from 'realm-web';
 import * as actionCreators from '../store/actions/actionCreators';
 import { initStorage, getDataFromStorage } from './storage';
+import { pixelsToDrawing } from './punksApi';
 
 /*
   Initial actions to dispatch:
@@ -8,6 +10,49 @@ import { initStorage, getDataFromStorage } from './storage';
 */
 const initialSetup = (dispatch, storage) => {
   dispatch(actionCreators.hideSpinner());
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const id = queryParams.get('id');
+  if (id) {
+    try {
+      const app = new App({ id: 'application-0-tonmp' });
+      const credentials = Credentials.anonymous();
+      app.logIn(credentials).then(() => {
+        const mongodb = app.currentUser.mongoClient('mongodb-atlas');
+        mongodb
+          .db('dopio')
+          .collection('assets')
+          .find({ id })
+          .then(assets => {
+            if (assets && assets.length) {
+              const { pixels } = assets[0];
+              if (pixels && pixels.length) {
+                const {
+                  frames,
+                  paletteGridData,
+                  cellSize,
+                  columns,
+                  rows
+                } = pixelsToDrawing(pixels);
+                // console.log(rows, columns, frames, paletteGridData);
+                dispatch(
+                  actionCreators.setDrawing(
+                    frames,
+                    paletteGridData,
+                    cellSize,
+                    columns,
+                    rows
+                  )
+                );
+              }
+            }
+          });
+      });
+    } catch (err) {
+      console.error('Failed to log in', err);
+    }
+    return;
+  }
 
   const dataStored = getDataFromStorage(storage);
   if (dataStored) {
@@ -21,6 +66,7 @@ const initialSetup = (dispatch, storage) => {
         rows,
         cellSize
       } = dataStored.stored[currentProjectIndex];
+      // console.log(frames, paletteGridData, columns, rows, cellSize);
 
       dispatch(
         actionCreators.setDrawing(

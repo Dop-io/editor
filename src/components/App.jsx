@@ -5,7 +5,6 @@ import PixelCanvasContainer from './PixelCanvas';
 import ColorPickerContainer from './ColorPicker';
 import ModalContainer from './Modal';
 import KeyBindings from './KeyBindings';
-import CssDisplayContainer from './CssDisplay';
 import EraserContainer from './Eraser';
 import BucketContainer from './Bucket';
 import MoveContainer from './Move';
@@ -17,6 +16,7 @@ import SimpleSpinnerContainer from './SimpleSpinner';
 import UndoRedoContainer from './UndoRedo';
 import initialSetup from '../utils/startup';
 import drawHandlersProvider from '../utils/drawHandlersProvider';
+// import CssDisplayContainer from './CssDisplay';
 // import CellSizeContainer from './CellSize';
 // import DimensionsContainer from './Dimensions';
 // import DurationContainer from './Duration';
@@ -297,9 +297,9 @@ export default class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="css-container">
+          {/* <div className="css-container">
             <CssDisplayContainer />
-          </div>
+          </div> */}
           <CookieConsent
             location="bottom"
             buttonText="Got it!"

@@ -54,12 +54,12 @@ class Modal extends React.Component {
       }
     } else {
       options = [
-        {
-          value: 'punks',
-          description: 'CryptoPunks',
-          labelFor: 'punks',
-          id: 5
-        },
+        // {
+        //   value: 'punks',
+        //   description: 'CryptoPunks',
+        //   labelFor: 'punks',
+        //   id: 5
+        // },
         {
           value: 'storage',
           description: 'Stored',
