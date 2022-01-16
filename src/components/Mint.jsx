@@ -5,30 +5,9 @@ import * as actionCreators from '../store/actions/actionCreators';
 import renderCanvasGIF from '../utils/mint';
 
 class Mint extends React.Component {
+  // eslint-disable-next-line class-methods-use-this
   mint() {
-    const queryParams = new URLSearchParams(window.location.search);
-    const id = queryParams.get('id');
-    if (!id) {
-      return;
-    }
-    const type = 'single';
-    const {
-      frames,
-      activeFrame,
-      columns,
-      rows,
-      cellSize,
-      duration
-    } = this.props;
-    renderCanvasGIF({
-      type,
-      frames,
-      activeFrame,
-      columns,
-      rows,
-      cellSize,
-      duration
-    });
+    renderCanvasGIF();
   }
 
   render() {
