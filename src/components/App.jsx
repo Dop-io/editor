@@ -10,12 +10,12 @@ import BucketContainer from './Bucket';
 import MoveContainer from './Move';
 import EyedropperContainer from './Eyedropper';
 import PaletteGridContainer from './PaletteGrid';
-import SaveDrawingContainer from './SaveDrawing';
 import SimpleNotificationContainer from './SimpleNotification';
 import SimpleSpinnerContainer from './SimpleSpinner';
 import UndoRedoContainer from './UndoRedo';
 import initialSetup from '../utils/startup';
 import drawHandlersProvider from '../utils/drawHandlersProvider';
+// import SaveDrawingContainer from './SaveDrawing';
 // import CssDisplayContainer from './CssDisplay';
 // import CellSizeContainer from './CellSize';
 // import DimensionsContainer from './Dimensions';
@@ -63,12 +63,7 @@ export default class App extends React.Component {
     const { helpOn, modalType, modalOpen } = this.state;
     return (
       <>
-        <header>
-          <div className="col-2-3">
-            <h1>DOP.IO</h1>
-          </div>
-          <div className="col-1-3"> </div>
-        </header>
+        <header> </header>
         <div
           className="app__main"
           onMouseUp={this.onMouseUp}
@@ -102,7 +97,7 @@ export default class App extends React.Component {
                     {/* <div data-tooltip={helpOn ? 'New project' : null}>
                       <NewProjectContainer />
                     </div> */}
-                    <div className="app__load-save-container">
+                    {/* <div className="app__load-save-container">
                       <button
                         type="button"
                         className="app__load-button"
@@ -118,7 +113,7 @@ export default class App extends React.Component {
                       <div data-tooltip={helpOn ? 'Save your project' : null}>
                         <SaveDrawingContainer />
                       </div>
-                    </div>
+                    </div> */}
                     <div
                       data-tooltip={
                         helpOn ? 'Undo (CTRL+Z) Redo (CTRL+Y)' : null
@@ -187,7 +182,7 @@ export default class App extends React.Component {
                   </div> */}
                   <div className="app__mobile--group">
                     <div className="app__social-container">
-                      <div
+                      {/* <div
                         data-tooltip={
                           helpOn
                             ? 'Download your creation in different formats'
@@ -202,7 +197,7 @@ export default class App extends React.Component {
                             this.changeModalType('download');
                           }}
                         />
-                      </div>
+                      </div> */}
                       <div className="app__help-container">
                         <div data-tooltip="Toggle help tooltips">
                           <button
@@ -250,21 +245,11 @@ export default class App extends React.Component {
                     <div className="app__mobile--group">
                       <button
                         type="button"
-                        className="app__ipfs-button"
+                        className="app__next-button"
                         onClick={() => {}}
-                        data-tooltip={helpOn ? 'Save to IPFS' : null}
+                        data-tooltip={helpOn ? 'Mint NFT' : null}
                       >
-                        Save to IPFS
-                      </button>
-                    </div>
-                    <div className="app__mobile--group">
-                      <button
-                        type="button"
-                        className="app__mint-button"
-                        onClick={() => {}}
-                        data-tooltip={helpOn ? 'Mint' : null}
-                      >
-                        Mint
+                        Next
                       </button>
                     </div>
                     {/* <div

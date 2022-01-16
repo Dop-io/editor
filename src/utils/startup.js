@@ -45,6 +45,8 @@ const initialSetup = (dispatch, storage) => {
                   )
                 );
               }
+            } else {
+              console.log('Punks not found');
             }
           });
       });
