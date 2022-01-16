@@ -118,4 +118,4 @@ Thank you!
 ## License
 
 [MIT](https://opensource.org/licenses/mit-license.php)
-Copyright © 2016 Javier Valencia Romero (@jvalen)
+Original pixel editor made by @jvalen
