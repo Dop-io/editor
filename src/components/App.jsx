@@ -15,6 +15,7 @@ import SimpleSpinnerContainer from './SimpleSpinner';
 import UndoRedoContainer from './UndoRedo';
 import initialSetup from '../utils/startup';
 import drawHandlersProvider from '../utils/drawHandlersProvider';
+import MintContainer from './Mint';
 // import SaveDrawingContainer from './SaveDrawing';
 // import CssDisplayContainer from './CssDisplay';
 // import CellSizeContainer from './CellSize';
@@ -182,7 +183,7 @@ export default class App extends React.Component {
                   </div> */}
                   <div className="app__mobile--group">
                     <div className="app__social-container">
-                      {/* <div
+                      <div
                         data-tooltip={
                           helpOn
                             ? 'Download your creation in different formats'
@@ -197,7 +198,7 @@ export default class App extends React.Component {
                             this.changeModalType('download');
                           }}
                         />
-                      </div> */}
+                      </div>
                       <div className="app__help-container">
                         <div data-tooltip="Toggle help tooltips">
                           <button
@@ -243,14 +244,7 @@ export default class App extends React.Component {
                       }}
                     />
                     <div className="app__mobile--group">
-                      <button
-                        type="button"
-                        className="app__next-button"
-                        onClick={() => {}}
-                        data-tooltip={helpOn ? 'Mint NFT' : null}
-                      >
-                        Next
-                      </button>
+                      <MintContainer />
                     </div>
                     {/* <div
                       data-tooltip={helpOn ? 'Reset the selected frame' : null}
