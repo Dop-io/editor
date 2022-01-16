@@ -116,6 +116,6 @@ Pull requests are also welcome, please take the following requirements as a chec
 Thank you!
 
 ## License
-
-[MIT](https://opensource.org/licenses/mit-license.php)
 Original pixel editor made by @jvalen
+[MIT](https://opensource.org/licenses/mit-license.php)
+Copyright © 2016 Javier Valencia Romero (@jvalen)
